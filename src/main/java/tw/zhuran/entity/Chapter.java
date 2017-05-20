@@ -15,7 +15,8 @@ public class Chapter {
     private String volumeId;
     private Integer seq;
     private String title;
-    private String content;
+    private String originalUrl;
+    private String paragraphId;
 
     public Long getKey() {
         return key;
@@ -71,12 +72,21 @@ public class Chapter {
         return this;
     }
 
-    public String getContent() {
-        return content;
+    public String getOriginalUrl() {
+        return originalUrl;
     }
 
-    public Chapter setContent(String content) {
-        this.content = content;
+    public Chapter setOriginalUrl(String originalUrl) {
+        this.originalUrl = originalUrl;
+        return this;
+    }
+
+    public String getParagraphId() {
+        return paragraphId;
+    }
+
+    public Chapter setParagraphId(String paragraphId) {
+        this.paragraphId = paragraphId;
         return this;
     }
 }
