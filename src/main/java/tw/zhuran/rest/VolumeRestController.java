@@ -22,7 +22,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/book/index")
+@RequestMapping("catalog")
 public class VolumeRestController {
     private static Logger logger = LoggerFactory.getLogger(VolumeRestController.class);
 
