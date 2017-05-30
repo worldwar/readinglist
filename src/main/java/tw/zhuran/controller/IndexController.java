@@ -8,11 +8,11 @@ import tw.zhuran.repository.BookRepository;
 
 @Controller
 @RequestMapping("/")
-public class BookController {
+public class IndexController {
     private BookRepository bookRepository;
 
     @Autowired
-    public BookController(BookRepository bookRepository) {
+    public IndexController(BookRepository bookRepository) {
         this.bookRepository = bookRepository;
     }
 
