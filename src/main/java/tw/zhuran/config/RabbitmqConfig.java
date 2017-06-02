@@ -1,9 +1,6 @@
 package tw.zhuran.config;
 
-import org.springframework.amqp.core.Binding;
-import org.springframework.amqp.core.BindingBuilder;
-import org.springframework.amqp.core.Queue;
-import org.springframework.amqp.core.TopicExchange;
+import org.springframework.amqp.core.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -16,16 +13,16 @@ public class RabbitmqConfig {
 
     @Bean
     Queue queue() {
-        return new Queue(queueName, false);
+        return new Queue(queueName, true, false, false);
     }
 
     @Bean
-    TopicExchange exchange() {
-        return new TopicExchange(topicName);
+    DirectExchange exchange() {
+        return new DirectExchange(topicName, true, false);
     }
 
     @Bean
-    Binding binding(Queue queue, TopicExchange exchange) {
+    Binding binding(Queue queue, DirectExchange exchange) {
         return BindingBuilder.bind(queue).to(exchange).with(queueName);
     }
 }
