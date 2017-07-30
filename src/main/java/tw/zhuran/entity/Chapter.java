@@ -1,15 +1,13 @@
 package tw.zhuran.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Chapter {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long key;
+    @Column(name = "chapter_id")
     private String id;
     private String bookId;
     private String volumeId;

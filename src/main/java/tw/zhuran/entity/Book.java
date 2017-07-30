@@ -1,9 +1,6 @@
 package tw.zhuran.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
@@ -11,6 +8,7 @@ public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long key;
+    @Column(name = "book_id")
     private String id;
     private String title;
     private String author;

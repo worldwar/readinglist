@@ -1,15 +1,13 @@
 package tw.zhuran.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Volume {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long key;
+    @Column(name = "volume_id")
     private String id;
     private String bookId;
     private Integer seq;
