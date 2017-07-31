@@ -17,6 +17,14 @@ public class MessageSender {
     public void send(AddBookRequest request) {
         String json = JSONObject.toJSONString(request);
         logger.info("start sending request");
-        rabbitTemplate.convertAndSend("add-book", json);
+        rabbitTemplate.convertAndSend(resolveRoutingKey(request), json);
+    }
+
+    String resolveRoutingKey(AddBookRequest request) {
+        if (request.getUrl().contains("gdwxcn")) {
+            return "add-book-gdwxcn";
+        } else {
+            return "add-book";
+        }
     }
 }
