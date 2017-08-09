@@ -1,0 +1,6 @@
+---
+applications:
+- name: readinglist
+  instances: 1
+  host: readinglist
+  path: build/libs/readinglist-0.0.1-SNAPSHOT.jar
