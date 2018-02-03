@@ -23,6 +23,8 @@ public class MessageSender {
     String resolveRoutingKey(AddBookRequest request) {
         if (request.getUrl().contains("gdwxcn")) {
             return "add-book-gdwxcn";
+        } else if (request.getUrl().contains("m.longtanxs")) {
+            return "add-book-m-longtanxs";
         } else {
             return "add-book";
         }

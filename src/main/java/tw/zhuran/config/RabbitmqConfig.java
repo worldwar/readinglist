@@ -11,6 +11,8 @@ public class RabbitmqConfig {
 
     final static String gdwxcnQueueName = "add-book-gdwxcn";
 
+    final static String mlongtanxsQueueName = "add-book-m-longtanxs";
+
     final static String topicName = "bookreadertopic";
 
     @Bean
@@ -36,5 +38,15 @@ public class RabbitmqConfig {
     @Bean
     Binding gdwxcnBinding(Queue queue, DirectExchange exchange) {
         return BindingBuilder.bind(queue).to(exchange).with(gdwxcnQueueName);
+    }
+
+    @Bean
+    Queue mlongtanxsQueue() {
+        return new Queue(mlongtanxsQueueName, true, false, false);
+    }
+
+    @Bean
+    Binding mlongtanxsBinding(Queue queue, DirectExchange exchange) {
+        return BindingBuilder.bind(queue).to(exchange).with(mlongtanxsQueueName);
     }
 }
